@@ -1,8 +1,24 @@
 import React, { Component } from 'react';
 
 class App extends Component {
+  state = {
+    resource: 'posts'
+  };
+
   render() {
-    return <div>App</div>;
+    return (
+      <div>
+        <div>
+          <button onClick={() => this.setState({ resource: 'posts' })}>
+            Post
+          </button>
+          <button onClick={() => this.setState({ resource: 'todos' })}>
+            Todos
+          </button>
+        </div>
+        {this.state.resource}
+      </div>
+    );
   }
 }
 
